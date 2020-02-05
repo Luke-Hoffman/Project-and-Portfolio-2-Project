@@ -6,6 +6,6 @@ draw_set_font(fnt_header);
 
 if talking = true
 {
-	current_response = scr_wordwrap(ds_grid_get(text,0,talk_counter),global.dialogue_width);
-	draw_text(room_width/2,room_height-256,current_response);
+	currentResponse = scr_wordwrap(ds_grid_get(responses,0,talkCounter),global.dialogueWidth);
+	draw_text(room_width/2,room_height-256,currentResponse);
 }

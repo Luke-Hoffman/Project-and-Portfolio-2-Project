@@ -3,28 +3,18 @@
 image_speed = 0;
 image_index = 1;
 
-talking = false
-talk_counter = 0; //change responses
+npcName = argument0;
 
-npc_name = argument0;
+talking = false
+talkCounter = 0; //change responses
+currentResponse = "";
+currentFlag = "none"; //change based on relevant flags
+npcFlags = ds_grid_create(2,1); //all flags npc checks
+ds_grid_set(npcFlags,0,0,"none");
 
 //import dialogue
-//dialogue_file = file_text_open_read("Dialogue/dialogue_"+npc_name+".csv");
-line_count = 0;
+responses = load_csv("Dialogue/dialogue_"+npcName+".csv");
 
-/*
-while !file_text_eof(dialogue_file)
-{
-	text[line_count++] = file_text_read_string(dialogue_file);
-	file_text_readln(dialogue_file);
-}
+scr_flags_sync(responses,1,npcFlags,0);
+scr_flags_sync(npcFlags,0,global.flags,0);
 
-file_text_close(dialogue_file);
-
-responses = array_length_1d(text)-1; //number of responses*/
-
-text = load_csv("Dialogue/dialogue_"+npc_name+".csv");
-
-responses = ds_grid_height(text);
-
-current_response = "";
