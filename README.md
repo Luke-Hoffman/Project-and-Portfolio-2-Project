@@ -88,7 +88,10 @@ _Flowchart to be constructed at a later time_
 #### Locomotion
 
 * Movement
+	* The player will be able to move up, down, left, and right
+	* The player should only be able to move within the player area and collide with walls, preventing further movement
 * Idle
+	* The player state should be idle when not performing any actions (such as: moving or interacting)
 
 #### Interaction
 
