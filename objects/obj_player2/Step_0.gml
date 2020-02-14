@@ -1,5 +1,5 @@
 //walking
-if !inDialogue && global.activePlayer = 1
+if !inDialogue && global.activePlayer = 2
 {
 	switch (keyboard_key)
 	{

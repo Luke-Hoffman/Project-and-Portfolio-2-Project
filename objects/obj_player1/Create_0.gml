@@ -2,7 +2,7 @@
 	//setup variables
 	dir = 1; //1 = north, 2 = east, 3 = south, 4 = west
 	walkSpeed = 3;
-	global.activePlayer = 1;
+	active = true;
 
 	image_speed = 0; //to stop autoplay
 	animFps = 15; //to set image speed later
