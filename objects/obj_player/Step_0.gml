@@ -1,26 +1,25 @@
-//walking
-if !inDialogue && global.activePlayer = 1
-{
-	switch (keyboard_key)
-	{
-		case vk_up:
-		case ord("W"):
-			dir = 1; y -= walkSpeed; sprite_index = spr_hero_up; 
-			image_speed = (animFps / room_speed); break;
-		case vk_right:
-		case ord("D"):
-			dir = 2; x += walkSpeed; sprite_index = spr_hero_right; 
-			image_speed = (animFps / room_speed); break;
-		case vk_down:
-		case ord("S"):
-			dir = 3; y += walkSpeed; sprite_index = spr_hero_down; 
-			image_speed = (animFps / room_speed); break;
-		case vk_left:
-		case ord("A"):
-			dir = 4; x -= walkSpeed; sprite_index = spr_hero_left; 
-			image_speed = (animFps / room_speed); break;
-		case vk_nokey:
-			image_speed = 0; image_index = 1; break;
-	}
+if(instance_exists(obj_textbox)) exit;
+
+input_left		= keyboard_check(vk_left);
+input_right		= keyboard_check(vk_right);
+input_up		= keyboard_check(vk_up);
+input_down		= keyboard_check(vk_down);
+input_run		= keyboard_check(vk_shift);
+input_walk		= keyboard_check(vk_control);
+
+//---------RESET MOVEMENT VARIABLES
+moveX = 0; 
+moveY = 0;
+
+//---------GET INTENDED MOVEMENT
+var right = (input_right - input_left);
+var left = (input_down - input_up);
+if(right != 0 or left != 0){
+	var dir = point_direction(x,y, x+right, y+left);
+	moveX = lengthdir_x(spd, dir);
+	moveY = lengthdir_y(spd, dir);
 }
 
+//---------APPLY MOVEMENT
+x += moveX;
+y += moveY;

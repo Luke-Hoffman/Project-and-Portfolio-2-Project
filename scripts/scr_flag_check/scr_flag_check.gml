@@ -1,4 +1,4 @@
-//scr_check_flag(flag,value)
+//scr_flag_check(flag,value)
 //Returns true if flag has value
 
 for (var ii = 0, gridHeight = ds_grid_height(global.flags), gridWidth = ds_grid_width(global.flags); ii < gridHeight; ii++) 
