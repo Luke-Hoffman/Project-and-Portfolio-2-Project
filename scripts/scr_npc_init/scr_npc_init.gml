@@ -1,18 +1,23 @@
-/// scr_npc_init(NPC Name)
+///@description init_npc
+///@arg Name
+///@arg Portrait
+///@arg PortraitTalk
+///@arg PortraitIdle
+///@arg VoiceSound
+///@arg Font
 
 image_speed = 0;
 image_index = 1;
 
-npcName = argument0;
-
 talking = false
-//talkCounter = 0; //change responses
-//currentResponse = "";
-//currentFlag = "none"; //change based on relevant flags
 
-//import dialogue
-//responses = load_csv("Dialogue/dialogue_"+npcName+".csv");
+reset_dialogue_defaults();
+myPortrait			= argument1;
+myVoice				= argument4;
+myFont				= argument5;
+myName				= argument0;
 
-//scr_flags_sync(responses,1,npcFlags,0); //load response flags to npc
-//scr_flags_sync(responses,1,global.flags,0); //instantiate new flags to global
-
+myPortraitTalk		= argument2;
+myPortraitTalk_x	= 26;
+myPortraitTalk_y	= 44;
+myPortraitIdle		= argument3;
