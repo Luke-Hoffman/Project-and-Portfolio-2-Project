@@ -7,9 +7,9 @@ switch(choice_variable){
 	#region First Dialogue
 		//Line 0
 		var i = 0;
-		myText[i]		= "You can run a script after any line of dialogue! Let's make an emote to the left.";
+		myText[i]		= "You can run a script after any line of dialogue! Let's make an emote to the right.";
 		mySpeaker[i]	= id;
-		myScripts[i]	= [create_instance_layer, 170,120,"Instances",obj_emote];
+		myScripts[i]	= [create_instance_layer, x+32,y,"Instances",obj_emote];
 		
 		//Line 1
 		i++;
@@ -21,7 +21,7 @@ switch(choice_variable){
 		myText[i]		= ["An emote", "Another you!"];
 		myTypes[i]		= 1;
 		mySpeaker[i]	= obj_player;
-		myScripts[i]	= [[create_instance_layer, 170,120,"Instances",obj_emote], [create_instance_layer, 170,120,"Instances",obj_examplechar]];
+		myScripts[i]	= [[create_instance_layer, x+32,y,"Instances",obj_emote], [create_instance_layer, x+64,y,"Instances",obj_exampleNPC]];
 		myNextLine[i]	= [0,0];
 		
 		//Line 3
@@ -113,4 +113,3 @@ switch(choice_variable){
 	break;
 }
 
-create_dialogue(myText[i],mySpeaker[i],myEffects[i],myTextSpeed[i],myTypes[i],myNextLine[i],myScripts[i],myTextCol[i],myEmotion[i],myEmote[i]);

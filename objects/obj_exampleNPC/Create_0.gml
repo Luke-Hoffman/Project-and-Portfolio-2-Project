@@ -3,7 +3,7 @@ event_inherited(); //so it will inherit from par_speaker
 
 //-------DIALOGUE STUFF
 
-myPortrait			= spr_npc1_down;
+myPortrait			= spr_portrait_player;
 myVoice				= snd_voice1;
 myName				= "Blue";
 

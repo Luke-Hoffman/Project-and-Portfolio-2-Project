@@ -1,5 +1,5 @@
 
-timer += 1;
+timer += 0.1;
 if(mode == 0){
 	if(timer > room_speed/2){
 		image_alpha -= 0.1;

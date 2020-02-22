@@ -1,5 +1,5 @@
 var dr = detection_radius;
-if(distance_to_object(playerobject) < dr){
+if(point_in_rectangle(playerobject.x, playerobject.y, x-dr, y-dr, x+dr, y+dr)){
 	if(myTextbox != noone){ 
 		if(!instance_exists(myTextbox)){ myTextbox = noone; exit; }
 	}
