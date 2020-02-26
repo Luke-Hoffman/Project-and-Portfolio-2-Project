@@ -25,3 +25,4 @@ myPortraitTalk_x	= 26;
 myPortraitTalk_y	= 44;
 myPortraitIdle		= spr_portrait_examplechar_idle;
 
+collisionSpeed = walkSpeed + 2 ;
